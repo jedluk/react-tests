@@ -4,10 +4,9 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxPromise from 'redux-promise';
 import reducers from 'reducers';
 
-export default ({ children, initialState = {} }) => {
-    return (
-        <Provider store={createStore(reducers,initialState, applyMiddleware(reduxPromise))}>
-            {children}
-        </Provider>
-    );
-}
+export default ({ children, initialState = {} }) => (
+  <Provider store={createStore(reducers, initialState, applyMiddleware(reduxPromise))}>
+    {children}
+  </Provider>
+);
+

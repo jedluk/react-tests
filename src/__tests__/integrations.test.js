@@ -8,9 +8,10 @@ beforeEach(() => {
     moxios.install();
     moxios.stubRequest('http://jsonplaceholder.typicode.com/comments', {
         status: 200,
-        response: [{name: 'Fetched #1'}, {name: 'Fetched #2'}]
-    })
+        response: [{ name: 'Fetched #1' }, { name: 'Fetched #2' }]
+    });
 });
+
 
 afterEach(() => {
     moxios.uninstall();
@@ -20,7 +21,7 @@ it('can fetch a list of comments and display them', (done) => {
     const wrapped = mount(
         <Root>
             <App />
-        </Root>
+        </Root>,
     );
     wrapped.find('.fetch-comments').simulate('click');
     moxios.wait(() => {
@@ -29,5 +30,4 @@ it('can fetch a list of comments and display them', (done) => {
         done();
         wrapped.unmount();
     });
-    
 });

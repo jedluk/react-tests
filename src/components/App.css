@@ -1,0 +1,8 @@
+.header {
+    display: flex;
+    list-style-type: none;
+}
+
+.header li {
+    margin-left: 10px;
+}
